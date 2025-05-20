@@ -170,7 +170,7 @@ function R$1(a, b, e, d, c) {
     throw b = String(a), Error("Objects are not valid as a React child (found: " + ("[object Object]" === b ? "object with keys {" + Object.keys(a).join(", ") + "}" : b) + "). If you meant to render a collection of children, use an array instead.");
   return h;
 }
-function S$7(a, b, e) {
+function S$8(a, b, e) {
   if (null == a)
     return a;
   var d = [], c = 0;
@@ -200,18 +200,18 @@ var U$1 = { current: null }, V$1 = { transition: null }, W$1 = { ReactCurrentDis
 function X$1() {
   throw Error("act(...) is not supported in production builds of React.");
 }
-react_production_min.Children = { map: S$7, forEach: function(a, b, e) {
-  S$7(a, function() {
+react_production_min.Children = { map: S$8, forEach: function(a, b, e) {
+  S$8(a, function() {
     b.apply(this, arguments);
   }, e);
 }, count: function(a) {
   var b = 0;
-  S$7(a, function() {
+  S$8(a, function() {
     b++;
   });
   return b;
 }, toArray: function(a) {
-  return S$7(a, function(a2) {
+  return S$8(a, function(a2) {
     return a2;
   }) || [];
 }, only: function(a) {
@@ -4879,7 +4879,7 @@ function Dj(a, b) {
         null === d ? b || null === a.tail ? a.tail = null : a.tail.sibling = null : d.sibling = null;
     }
 }
-function S$6(a) {
+function S$7(a) {
   var b = null !== a.alternate && a.alternate.child === a.child, c = 0, d = 0;
   if (b)
     for (var e = a.child; null !== e; )
@@ -4905,9 +4905,9 @@ function Ej(a, b, c) {
     case 12:
     case 9:
     case 14:
-      return S$6(b), null;
+      return S$7(b), null;
     case 1:
-      return Zf(b.type) && $f(), S$6(b), null;
+      return Zf(b.type) && $f(), S$7(b), null;
     case 3:
       d = b.stateNode;
       zh();
@@ -4918,7 +4918,7 @@ function Ej(a, b, c) {
       if (null === a || null === a.child)
         Gg(b) ? b.flags |= 4 : null === a || a.memoizedState.isDehydrated && 0 === (b.flags & 256) || (b.flags |= 1024, null !== zg && (Fj(zg), zg = null));
       Aj(a, b);
-      S$6(b);
+      S$7(b);
       return null;
     case 5:
       Bh(b);
@@ -4930,7 +4930,7 @@ function Ej(a, b, c) {
         if (!d) {
           if (null === b.stateNode)
             throw Error(p(166));
-          S$6(b);
+          S$7(b);
           return null;
         }
         a = xh(uh.current);
@@ -5128,7 +5128,7 @@ function Ej(a, b, c) {
         }
         null !== b.ref && (b.flags |= 512, b.flags |= 2097152);
       }
-      S$6(b);
+      S$7(b);
       return null;
     case 6:
       if (a && null != b.stateNode)
@@ -5156,7 +5156,7 @@ function Ej(a, b, c) {
         } else
           d = (9 === c.nodeType ? c : c.ownerDocument).createTextNode(d), d[Of] = b, b.stateNode = d;
       }
-      S$6(b);
+      S$7(b);
       return null;
     case 13:
       E(L);
@@ -5175,7 +5175,7 @@ function Ej(a, b, c) {
             f2[Of] = b;
           } else
             Ig(), 0 === (b.flags & 128) && (b.memoizedState = null), b.flags |= 4;
-          S$6(b);
+          S$7(b);
           f2 = false;
         } else
           null !== zg && (Fj(zg), zg = null), f2 = true;
@@ -5187,19 +5187,19 @@ function Ej(a, b, c) {
       d = null !== d;
       d !== (null !== a && null !== a.memoizedState) && d && (b.child.flags |= 8192, 0 !== (b.mode & 1) && (null === a || 0 !== (L.current & 1) ? 0 === T && (T = 3) : tj()));
       null !== b.updateQueue && (b.flags |= 4);
-      S$6(b);
+      S$7(b);
       return null;
     case 4:
-      return zh(), Aj(a, b), null === a && sf(b.stateNode.containerInfo), S$6(b), null;
+      return zh(), Aj(a, b), null === a && sf(b.stateNode.containerInfo), S$7(b), null;
     case 10:
-      return ah(b.type._context), S$6(b), null;
+      return ah(b.type._context), S$7(b), null;
     case 17:
-      return Zf(b.type) && $f(), S$6(b), null;
+      return Zf(b.type) && $f(), S$7(b), null;
     case 19:
       E(L);
       f2 = b.memoizedState;
       if (null === f2)
-        return S$6(b), null;
+        return S$7(b), null;
       d = 0 !== (b.flags & 128);
       g = f2.rendering;
       if (null === g)
@@ -5229,18 +5229,18 @@ function Ej(a, b, c) {
         if (!d)
           if (a = Ch(g), null !== a) {
             if (b.flags |= 128, d = true, c = a.updateQueue, null !== c && (b.updateQueue = c, b.flags |= 4), Dj(f2, true), null === f2.tail && "hidden" === f2.tailMode && !g.alternate && !I)
-              return S$6(b), null;
+              return S$7(b), null;
           } else
             2 * B() - f2.renderingStartTime > Gj && 1073741824 !== c && (b.flags |= 128, d = true, Dj(f2, false), b.lanes = 4194304);
         f2.isBackwards ? (g.sibling = b.child, b.child = g) : (c = f2.last, null !== c ? c.sibling = g : b.child = g, f2.last = g);
       }
       if (null !== f2.tail)
         return b = f2.tail, f2.rendering = b, f2.tail = b.sibling, f2.renderingStartTime = B(), b.sibling = null, c = L.current, G(L, d ? c & 1 | 2 : c & 1), b;
-      S$6(b);
+      S$7(b);
       return null;
     case 22:
     case 23:
-      return Hj(), d = null !== b.memoizedState, null !== a && null !== a.memoizedState !== d && (b.flags |= 8192), d && 0 !== (b.mode & 1) ? 0 !== (fj & 1073741824) && (S$6(b), b.subtreeFlags & 6 && (b.flags |= 8192)) : S$6(b), null;
+      return Hj(), d = null !== b.memoizedState, null !== a && null !== a.memoizedState !== d && (b.flags |= 8192), d && 0 !== (b.mode & 1) ? 0 !== (fj & 1073741824) && (S$7(b), b.subtreeFlags & 6 && (b.flags |= 8192)) : S$7(b), null;
     case 24:
       return null;
     case 25:
@@ -7584,9 +7584,54 @@ var m = reactDomExports;
   client.createRoot = m.createRoot;
   client.hydrateRoot = m.hydrateRoot;
 }
+const container$1 = "_container_10irq_1";
+const S$6 = {
+  container: container$1
+};
 const BASE_URL = "http://techcourse-lv2-alb-974870821.ap-northeast-2.elb.amazonaws.com";
 const PRODUCT_URL = `${BASE_URL}/products`;
 const CART_URL = `${BASE_URL}/cart-items`;
+const USER_TOKEN = "TWluU3VuZ0plOnBhc3N3b3Jk";
+const toastContainer = "_toastContainer_eq78r_1";
+const active = "_active_eq78r_1";
+const S$5 = {
+  toastContainer,
+  active
+};
+const ErrorToast = ({ message, onClose }) => {
+  reactExports.useEffect(() => {
+    const timer = setTimeout(() => {
+      onClose();
+    }, 3500);
+    return () => clearTimeout(timer);
+  }, [onClose]);
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$5.toastContainer, children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: S$5.toastText, children: message }) });
+};
+const ErrorContext = reactExports.createContext({
+  showError: () => {
+  }
+});
+function ErrorProvider({ children }) {
+  const [error, setError] = reactExports.useState("");
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    ErrorContext.Provider,
+    {
+      value: {
+        showError: (msg) => {
+          if (msg === "Failed to fetch")
+            setError("인터넷 오류입니다. 확인 후 다시 시도해주세요.");
+          else
+            setError(msg);
+        }
+      },
+      children: [
+        children,
+        error && /* @__PURE__ */ jsxRuntimeExports.jsx(ErrorToast, { message: error, onClose: () => setError("") })
+      ]
+    }
+  );
+}
+const useError = () => reactExports.useContext(ErrorContext);
 const handleHttpError = (response) => {
   if (response.status === 400) {
     throw new Error("잘못된 요청입니다. 다시 시도해주세요.");
@@ -7604,150 +7649,134 @@ const handleHttpError = (response) => {
     throw new Error("서버에 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
   }
 };
-const USER_TOKEN = "TWluU3VuZ0plOnBhc3N3b3Jk";
+function useFetch() {
+  const [loading, setLoading] = reactExports.useState(false);
+  const fetchData = reactExports.useCallback(async (url, options = {}) => {
+    try {
+      setLoading(true);
+      const response = await fetch(url, options);
+      handleHttpError(response);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      if (error instanceof Error)
+        throw error;
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+  return { fetchData, loading };
+}
 function useCart() {
   const [cartProducts, setCartProducts] = reactExports.useState([]);
-  const [error, setError] = reactExports.useState("");
-  const fetchCartProducts = async () => {
+  const { fetchData, loading } = useFetch();
+  const { showError } = useError();
+  const fetchCartProducts = reactExports.useCallback(async () => {
     try {
-      const response = await fetch(CART_URL, {
+      const data = await fetchData(CART_URL, {
         headers: {
           "content-type": "application/json",
           Authorization: `Basic ${USER_TOKEN}`
         },
         method: "GET"
       });
-      handleHttpError(response);
-      const data = await response.json();
       setCartProducts(data.content);
-    } catch (error2) {
-      if (error2 instanceof Error) {
-        setError(error2.message);
-      }
+    } catch (error) {
+      if (error instanceof Error)
+        showError(error.message);
     }
-  };
+  }, [fetchData, showError]);
   reactExports.useEffect(() => {
     fetchCartProducts();
-  }, []);
-  return { cartProducts, fetchCartProducts, cartError: error };
+  }, [fetchCartProducts]);
+  return { cartProducts, fetchCartProducts, loading };
 }
 const getQueryURL = (baseURL, query) => {
   const params = new URLSearchParams(query);
   return baseURL + "?" + params.toString();
 };
-function useProducts({ page = "0", size = "20", sortingType = "", filterType = "" }) {
+const useProductQueryURL = ({ page = "0", size = "20", sortingType = "", filterType = "" }) => {
+  const requestURL = reactExports.useMemo(() => {
+    const query = {
+      page,
+      size,
+      ...sortingType && { sort: `price,${sortingType}` },
+      ...filterType && { category: filterType }
+    };
+    return getQueryURL(PRODUCT_URL, query);
+  }, [page, size, sortingType, filterType]);
+  return { requestURL };
+};
+function useProducts({
+  page = "0",
+  size = "20",
+  sortingType = "",
+  filterType = ""
+}) {
   const [productsInfo, setProductsInfo] = reactExports.useState({ content: [] });
-  const [loading, setLoading] = reactExports.useState(false);
-  const [error, setError] = reactExports.useState("");
+  const { fetchData, loading } = useFetch();
+  const { requestURL } = useProductQueryURL({ page, size, sortingType, filterType });
+  const { showError } = useError();
   const products = productsInfo.content;
-  const query = {
-    page,
-    size,
-    ...sortingType && { sort: `price,${sortingType}` },
-    ...filterType && { category: filterType }
-  };
-  const requestURL = getQueryURL(PRODUCT_URL, query);
   reactExports.useEffect(() => {
     const fetchProducts = async () => {
       try {
-        setLoading(true);
-        const response = await fetch(requestURL);
-        handleHttpError(response);
-        const data = await response.json();
+        const data = await fetchData(requestURL);
         setProductsInfo(data);
-      } catch (error2) {
-        if (error2 instanceof Error) {
-          setError(error2.message);
-        }
-      } finally {
-        setLoading(false);
+      } catch (error) {
+        if (error instanceof Error)
+          showError(error.message);
       }
     };
     fetchProducts();
-  }, [requestURL]);
-  return { products, loading, productError: error };
+  }, [fetchData, requestURL, showError]);
+  return { products, loading };
 }
-const toastContainer = "_toastContainer_qkiy9_1";
-const active = "_active_qkiy9_1";
-const S$5 = {
-  toastContainer,
-  active
-};
-const ErrorToast = ({ isError, message }) => {
-  return isError && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$5.toastContainer, children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: S$5.toastText, children: message }) });
-};
-const container$1 = "_container_1y9b2_1";
-const cartContainer = "_cartContainer_1y9b2_27";
-const cartCount = "_cartCount_1y9b2_35";
+const container = "_container_7q2qy_1";
+const cartContainer = "_cartContainer_7q2qy_27";
+const cartCount = "_cartCount_7q2qy_35";
 const S$4 = {
-  container: container$1,
+  container,
   cartContainer,
   cartCount
 };
-const Header = ({ cardProducts, error: { productError, cartError } }) => {
-  const cartCount2 = cardProducts.length;
+const Header = ({ cartCount: cartCount2 }) => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$4.container, children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "SHOP" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Cart, { count: cartCount2 }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ErrorToast, { isError: productError !== "" || cartError !== "", message: productError !== "" ? productError : cartError })
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Cart, { count: cartCount2 })
   ] });
 };
 const Cart = ({ count }) => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$4.cartContainer, children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { xmlns: "http://www.w3.org/2000/svg", width: "33", height: "32", viewBox: "0 0 33 32", fill: "none", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-      "path",
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "svg",
       {
-        d: "M16.292 3.99998C15.4822 3.99998 14.7289 4.21152 14.0321 4.6346C13.3353 5.03844 12.7798 5.59613 12.3654 6.30767C11.97 7.01921 11.7722 7.78844 11.7722 8.61537V9.53844H7.30894L7.25244 10.4038L6.29199 28H26.292L25.3315 10.4038L25.275 9.53844H20.8118V8.61537C20.8118 7.78844 20.6046 7.01921 20.1903 6.30767C19.7948 5.59613 19.2487 5.03844 18.5519 4.6346C17.8551 4.21152 17.1018 3.99998 16.292 3.99998ZM16.292 5.84613C17.0453 5.84613 17.6856 6.11537 18.2129 6.65383C18.7402 7.19229 19.0039 7.84613 19.0039 8.61537V9.53844H13.5801V8.61537C13.5801 7.84613 13.8438 7.19229 14.3711 6.65383C14.8984 6.11537 15.5387 5.84613 16.292 5.84613ZM9.00386 11.3846H11.7722V14.1538H13.5801V11.3846H19.0039V14.1538H20.8118V11.3846H23.5801L24.3711 26.1538H8.2129L9.00386 11.3846Z",
-        fill: "white"
+        xmlns: "http://www.w3.org/2000/svg",
+        width: "33",
+        height: "32",
+        viewBox: "0 0 33 32",
+        fill: "none",
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "path",
+          {
+            d: "M16.292 3.99998C15.4822 3.99998 14.7289 4.21152 14.0321 4.6346C13.3353 5.03844 12.7798 5.59613 12.3654 6.30767C11.97 7.01921 11.7722 7.78844 11.7722 8.61537V9.53844H7.30894L7.25244 10.4038L6.29199 28H26.292L25.3315 10.4038L25.275 9.53844H20.8118V8.61537C20.8118 7.78844 20.6046 7.01921 20.1903 6.30767C19.7948 5.59613 19.2487 5.03844 18.5519 4.6346C17.8551 4.21152 17.1018 3.99998 16.292 3.99998ZM16.292 5.84613C17.0453 5.84613 17.6856 6.11537 18.2129 6.65383C18.7402 7.19229 19.0039 7.84613 19.0039 8.61537V9.53844H13.5801V8.61537C13.5801 7.84613 13.8438 7.19229 14.3711 6.65383C14.8984 6.11537 15.5387 5.84613 16.292 5.84613ZM9.00386 11.3846H11.7722V14.1538H13.5801V11.3846H19.0039V14.1538H20.8118V11.3846H23.5801L24.3711 26.1538H8.2129L9.00386 11.3846Z",
+            fill: "white"
+          }
+        )
       }
-    ) }),
+    ),
     count !== 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$4.cartCount, children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: count }) })
   ] });
 };
-const addCart = async (productId, quantity = 1) => {
-  try {
-    const response = await fetch(CART_URL, {
-      headers: {
-        "content-type": "application/json",
-        Authorization: `Basic ${USER_TOKEN}`
-      },
-      method: "POST",
-      body: JSON.stringify({
-        productId,
-        quantity
-      })
-    });
-    handleHttpError(response);
-  } catch (error) {
-    if (error instanceof Error)
-      throw new Error(error.message);
-  }
-};
-const removeCart = async (cartId) => {
-  try {
-    const response = await fetch(`${CART_URL}/${cartId}`, {
-      headers: {
-        "content-type": "application/json",
-        Authorization: `Basic ${USER_TOKEN}`
-      },
-      method: "DELETE"
-    });
-    console.log(response);
-    handleHttpError(response);
-  } catch (error) {
-    if (error instanceof Error)
-      throw new Error(error.message);
-  }
-};
-const cardContainer$1 = "_cardContainer_10hls_1";
-const cardImg = "_cardImg_10hls_21";
-const glow$1 = "_glow_10hls_1";
-const contentContainer$2 = "_contentContainer_10hls_39";
-const itemDescription$1 = "_itemDescription_10hls_57";
-const cardName = "_cardName_10hls_69";
-const buttonWrap$1 = "_buttonWrap_10hls_91";
-const addCartButton = "_addCartButton_10hls_103";
-const removeCartButton = "_removeCartButton_10hls_127";
+const cardContainer$1 = "_cardContainer_o10cy_1";
+const cardImg = "_cardImg_o10cy_21";
+const glow$1 = "_glow_o10cy_1";
+const contentContainer$2 = "_contentContainer_o10cy_39";
+const itemDescription$1 = "_itemDescription_o10cy_57";
+const cardName = "_cardName_o10cy_69";
+const buttonWrap$1 = "_buttonWrap_o10cy_91";
+const addCartButton = "_addCartButton_o10cy_103";
+const removeCartButton = "_removeCartButton_o10cy_127";
 const S$3 = {
   cardContainer: cardContainer$1,
   cardImg,
@@ -7759,15 +7788,7 @@ const S$3 = {
   addCartButton,
   removeCartButton
 };
-const ItemCard = ({
-  id: id2,
-  imageUrl,
-  name,
-  price,
-  isCart,
-  cartInfo,
-  fetchCartProducts
-}) => {
+const ItemCard = ({ imageUrl, name, price, isCart, onAddCart, onRemoveCart }) => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$3.cardContainer, children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       "img",
@@ -7789,33 +7810,13 @@ const ItemCard = ({
           "원"
         ] })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$3.buttonWrap, children: isCart ? /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          className: S$3.removeCartButton,
-          onClick: async () => {
-            await removeCart(cartInfo.id);
-            fetchCartProducts();
-          },
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: S$3.cartImg, src: "./images/remove-cart.svg", alt: "장바구니 제거" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "빼기" })
-          ]
-        }
-      ) : /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          className: S$3.addCartButton,
-          onClick: async () => {
-            await addCart(id2);
-            fetchCartProducts();
-          },
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: S$3.cartImg, src: "./images/add-cart.svg", alt: "장바구니 추가" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "담기" })
-          ]
-        }
-      ) })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$3.buttonWrap, children: isCart ? /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: S$3.removeCartButton, onClick: onRemoveCart, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: S$3.cartImg, src: "./images/remove-cart.svg", alt: "장바구니 제거" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "빼기" })
+      ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: S$3.addCartButton, onClick: onAddCart, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: S$3.cartImg, src: "./images/add-cart.svg", alt: "장바구니 추가" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "담기" })
+      ] }) })
     ] })
   ] });
 };
@@ -7854,31 +7855,88 @@ const S$1 = {
 const Skeleton = ({ length }) => {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$1.itemContainer, children: Array.from({ length }).map((_, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(SkeletonCard, {}, i)) });
 };
-const container = "_container_1sovp_1";
-const title = "_title_1sovp_15";
-const contentContainer = "_contentContainer_1sovp_27";
-const contentTop = "_contentTop_1sovp_37";
-const dropdownContainer = "_dropdownContainer_1sovp_53";
-const itemContainer = "_itemContainer_1sovp_79";
+const title = "_title_xvfs4_1";
+const contentContainer = "_contentContainer_xvfs4_13";
+const contentTop = "_contentTop_xvfs4_23";
+const dropdownContainer = "_dropdownContainer_xvfs4_39";
+const itemContainer = "_itemContainer_xvfs4_65";
 const S = {
-  container,
   title,
   contentContainer,
   contentTop,
   dropdownContainer,
   itemContainer
 };
-const Product = () => {
-  const [filter, setFilter] = reactExports.useState("");
-  const [sort, setSort] = reactExports.useState("");
-  const { products, loading, productError } = useProducts({ filterType: filter, sortingType: sort });
-  const { cartProducts, fetchCartProducts, cartError } = useCart();
+const addCart = async (productId, quantity = 1) => {
+  try {
+    const response = await fetch(CART_URL, {
+      headers: {
+        "content-type": "application/json",
+        Authorization: `Basic ${USER_TOKEN}`
+      },
+      method: "POST",
+      body: JSON.stringify({
+        productId,
+        quantity
+      })
+    });
+    handleHttpError(response);
+  } catch (error) {
+    if (error instanceof Error)
+      throw new Error(error.message);
+  }
+};
+const removeCart = async (cartId) => {
+  try {
+    const response = await fetch(`${CART_URL}/${cartId}`, {
+      headers: {
+        "content-type": "application/json",
+        Authorization: `Basic ${USER_TOKEN}`
+      },
+      method: "DELETE"
+    });
+    console.log(response);
+    handleHttpError(response);
+  } catch (error) {
+    if (error instanceof Error)
+      throw new Error(error.message);
+  }
+};
+const getMergedData = (products, cartProducts) => {
   const mergedData = products.map((product) => {
     const cart = cartProducts.find((item) => item.product.id === product.id);
     return cart ? { ...product, cartInfo: { id: cart.id, quantity: cart.quantity } } : { ...product, cartInfo: { id: -1, quantity: 0 } };
   });
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S.container, children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Header, { cardProducts: cartProducts, error: { productError, cartError } }),
+  return mergedData;
+};
+const Product = () => {
+  const [filter, setFilter] = reactExports.useState("");
+  const [sort, setSort] = reactExports.useState("");
+  const { showError } = useError();
+  const { products, loading } = useProducts({
+    filterType: filter,
+    sortingType: sort
+  });
+  const { cartProducts, fetchCartProducts } = useCart();
+  const mergedData = getMergedData(products, cartProducts);
+  const handleAddCart = async (id2) => {
+    try {
+      await addCart(id2);
+      await fetchCartProducts();
+    } catch (e) {
+      showError("장바구니 추가 중 오류가 발생했습니다. 다시 시도해주세요.");
+    }
+  };
+  const handleRemoveCart = async (id2) => {
+    try {
+      await removeCart(id2);
+      await fetchCartProducts();
+    } catch (e) {
+      showError("장바구니 삭제 중 오류가 발생했습니다. 다시 시도해주세요.");
+    }
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Header, { cartCount: cartProducts.length }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S.contentContainer, children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S.contentTop, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: S.title, children: "bpple 상품 목록" }),
@@ -7894,12 +7952,26 @@ const Product = () => {
           ] })
         ] })
       ] }),
-      loading ? /* @__PURE__ */ jsxRuntimeExports.jsx(Skeleton, { length: 10 }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S.itemContainer, children: mergedData == null ? void 0 : mergedData.map(({ id: id2, imageUrl, name, price, cartInfo }) => /* @__PURE__ */ jsxRuntimeExports.jsx(ItemCard, { imageUrl, name, price, isCart: cartInfo.id !== -1, cartInfo, fetchCartProducts, id: id2 }, id2)) })
+      loading ? /* @__PURE__ */ jsxRuntimeExports.jsx(Skeleton, { length: 10 }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S.itemContainer, children: mergedData == null ? void 0 : mergedData.map(({ id: id2, imageUrl, name, price, cartInfo }) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+        ItemCard,
+        {
+          imageUrl,
+          name,
+          price,
+          isCart: cartInfo.id !== -1,
+          onAddCart: () => handleAddCart(id2),
+          onRemoveCart: () => handleRemoveCart(cartInfo.id)
+        },
+        id2
+      )) })
     ] })
   ] });
 };
 function App() {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(Product, {});
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$6.container, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(ErrorProvider, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Product, {}),
+    ";"
+  ] }) });
 }
 client.createRoot(document.getElementById("root")).render(
   /* @__PURE__ */ jsxRuntimeExports.jsx(React.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })

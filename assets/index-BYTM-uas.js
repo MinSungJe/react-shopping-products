@@ -12894,7 +12894,11 @@ const handlers = [
 const worker = setupWorker(...handlers);
 async function prepare() {
   {
-    await worker.start();
+    await worker.start({
+      serviceWorker: {
+        url: "/react-shopping-products/mockServiceWorker.js"
+      }
+    });
   }
 }
 prepare().then(() => {

@@ -459,6 +459,19 @@
     opacity: 0;
   }
 }
+._container_iya5p_1 {
+  user-select: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+._nothingImage_iya5p_19 {
+  margin: 20px 0px;
+  width: 40%;
+}
 * {
   margin: 0;
   box-sizing: border-box;

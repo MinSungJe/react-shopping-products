@@ -162,7 +162,7 @@ function R$1(a, b, e, d, c) {
   else if ("object" === k2) throw b = String(a), Error("Objects are not valid as a React child (found: " + ("[object Object]" === b ? "object with keys {" + Object.keys(a).join(", ") + "}" : b) + "). If you meant to render a collection of children, use an array instead.");
   return h;
 }
-function S$a(a, b, e) {
+function S$b(a, b, e) {
   if (null == a) return a;
   var d = [], c = 0;
   R$1(a, d, "", "", function(a2) {
@@ -188,18 +188,18 @@ var U$1 = { current: null }, V$1 = { transition: null }, W$1 = { ReactCurrentDis
 function X$1() {
   throw Error("act(...) is not supported in production builds of React.");
 }
-react_production_min.Children = { map: S$a, forEach: function(a, b, e) {
-  S$a(a, function() {
+react_production_min.Children = { map: S$b, forEach: function(a, b, e) {
+  S$b(a, function() {
     b.apply(this, arguments);
   }, e);
 }, count: function(a) {
   var b = 0;
-  S$a(a, function() {
+  S$b(a, function() {
     b++;
   });
   return b;
 }, toArray: function(a) {
-  return S$a(a, function(a2) {
+  return S$b(a, function(a2) {
     return a2;
   }) || [];
 }, only: function(a) {
@@ -4499,7 +4499,7 @@ function Dj(a, b) {
       null === d ? b || null === a.tail ? a.tail = null : a.tail.sibling = null : d.sibling = null;
   }
 }
-function S$9(a) {
+function S$a(a) {
   var b = null !== a.alternate && a.alternate.child === a.child, c = 0, d = 0;
   if (b) for (var e = a.child; null !== e; ) c |= e.lanes | e.childLanes, d |= e.subtreeFlags & 14680064, d |= e.flags & 14680064, e.return = a, e = e.sibling;
   else for (e = a.child; null !== e; ) c |= e.lanes | e.childLanes, d |= e.subtreeFlags, d |= e.flags, e.return = a, e = e.sibling;
@@ -4521,9 +4521,9 @@ function Ej(a, b, c) {
     case 12:
     case 9:
     case 14:
-      return S$9(b), null;
+      return S$a(b), null;
     case 1:
-      return Zf(b.type) && $f(), S$9(b), null;
+      return Zf(b.type) && $f(), S$a(b), null;
     case 3:
       d = b.stateNode;
       zh();
@@ -4533,7 +4533,7 @@ function Ej(a, b, c) {
       d.pendingContext && (d.context = d.pendingContext, d.pendingContext = null);
       if (null === a || null === a.child) Gg(b) ? b.flags |= 4 : null === a || a.memoizedState.isDehydrated && 0 === (b.flags & 256) || (b.flags |= 1024, null !== zg && (Fj(zg), zg = null));
       Aj(a, b);
-      S$9(b);
+      S$a(b);
       return null;
     case 5:
       Bh(b);
@@ -4543,7 +4543,7 @@ function Ej(a, b, c) {
       else {
         if (!d) {
           if (null === b.stateNode) throw Error(p(166));
-          S$9(b);
+          S$a(b);
           return null;
         }
         a = xh(uh.current);
@@ -4737,7 +4737,7 @@ function Ej(a, b, c) {
         }
         null !== b.ref && (b.flags |= 512, b.flags |= 2097152);
       }
-      S$9(b);
+      S$a(b);
       return null;
     case 6:
       if (a && null != b.stateNode) Cj(a, b, a.memoizedProps, d);
@@ -4761,7 +4761,7 @@ function Ej(a, b, c) {
           f2 && (b.flags |= 4);
         } else d = (9 === c.nodeType ? c : c.ownerDocument).createTextNode(d), d[Of] = b, b.stateNode = d;
       }
-      S$9(b);
+      S$a(b);
       return null;
     case 13:
       E(L);
@@ -4776,7 +4776,7 @@ function Ej(a, b, c) {
             if (!f2) throw Error(p(317));
             f2[Of] = b;
           } else Ig(), 0 === (b.flags & 128) && (b.memoizedState = null), b.flags |= 4;
-          S$9(b);
+          S$a(b);
           f2 = false;
         } else null !== zg && (Fj(zg), zg = null), f2 = true;
         if (!f2) return b.flags & 65536 ? b : null;
@@ -4785,18 +4785,18 @@ function Ej(a, b, c) {
       d = null !== d;
       d !== (null !== a && null !== a.memoizedState) && d && (b.child.flags |= 8192, 0 !== (b.mode & 1) && (null === a || 0 !== (L.current & 1) ? 0 === T && (T = 3) : tj()));
       null !== b.updateQueue && (b.flags |= 4);
-      S$9(b);
+      S$a(b);
       return null;
     case 4:
-      return zh(), Aj(a, b), null === a && sf(b.stateNode.containerInfo), S$9(b), null;
+      return zh(), Aj(a, b), null === a && sf(b.stateNode.containerInfo), S$a(b), null;
     case 10:
-      return ah(b.type._context), S$9(b), null;
+      return ah(b.type._context), S$a(b), null;
     case 17:
-      return Zf(b.type) && $f(), S$9(b), null;
+      return Zf(b.type) && $f(), S$a(b), null;
     case 19:
       E(L);
       f2 = b.memoizedState;
-      if (null === f2) return S$9(b), null;
+      if (null === f2) return S$a(b), null;
       d = 0 !== (b.flags & 128);
       g = f2.rendering;
       if (null === g) if (d) Dj(f2, false);
@@ -4820,16 +4820,16 @@ function Ej(a, b, c) {
       }
       else {
         if (!d) if (a = Ch(g), null !== a) {
-          if (b.flags |= 128, d = true, c = a.updateQueue, null !== c && (b.updateQueue = c, b.flags |= 4), Dj(f2, true), null === f2.tail && "hidden" === f2.tailMode && !g.alternate && !I) return S$9(b), null;
+          if (b.flags |= 128, d = true, c = a.updateQueue, null !== c && (b.updateQueue = c, b.flags |= 4), Dj(f2, true), null === f2.tail && "hidden" === f2.tailMode && !g.alternate && !I) return S$a(b), null;
         } else 2 * B() - f2.renderingStartTime > Gj && 1073741824 !== c && (b.flags |= 128, d = true, Dj(f2, false), b.lanes = 4194304);
         f2.isBackwards ? (g.sibling = b.child, b.child = g) : (c = f2.last, null !== c ? c.sibling = g : b.child = g, f2.last = g);
       }
       if (null !== f2.tail) return b = f2.tail, f2.rendering = b, f2.tail = b.sibling, f2.renderingStartTime = B(), b.sibling = null, c = L.current, G(L, d ? c & 1 | 2 : c & 1), b;
-      S$9(b);
+      S$a(b);
       return null;
     case 22:
     case 23:
-      return Hj(), d = null !== b.memoizedState, null !== a && null !== a.memoizedState !== d && (b.flags |= 8192), d && 0 !== (b.mode & 1) ? 0 !== (fj & 1073741824) && (S$9(b), b.subtreeFlags & 6 && (b.flags |= 8192)) : S$9(b), null;
+      return Hj(), d = null !== b.memoizedState, null !== a && null !== a.memoizedState !== d && (b.flags |= 8192), d && 0 !== (b.mode & 1) ? 0 !== (fj & 1073741824) && (S$a(b), b.subtreeFlags & 6 && (b.flags |= 8192)) : S$a(b), null;
     case 24:
       return null;
     case 25:
@@ -7015,26 +7015,26 @@ var m = reactDomExports;
   client.createRoot = m.createRoot;
   client.hydrateRoot = m.hydrateRoot;
 }
-const container$3 = "_container_10irq_1";
-const S$8 = {
-  container: container$3
+const container$4 = "_container_10irq_1";
+const S$9 = {
+  container: container$4
 };
-const container$2 = "_container_8pe2d_1";
+const container$3 = "_container_8pe2d_1";
 const cartContainer = "_cartContainer_8pe2d_29";
 const cartCount = "_cartCount_8pe2d_41";
-const S$7 = {
-  container: container$2,
+const S$8 = {
+  container: container$3,
   cartContainer,
   cartCount
 };
 const Header = ({ onClickIcon: handleClickIcon, cartCount: cartCount2 }) => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$7.container, children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$8.container, children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "SHOP" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Cart, { count: cartCount2, onClick: handleClickIcon })
   ] });
 };
 const Cart = ({ count, onClick: handleClickIcon }) => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { "data-testid": "cart-icon", className: S$7.cartContainer, onClick: handleClickIcon, children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { "data-testid": "cart-icon", className: S$8.cartContainer, onClick: handleClickIcon, children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       "svg",
       {
@@ -7052,7 +7052,7 @@ const Cart = ({ count, onClick: handleClickIcon }) => {
         )
       }
     ),
-    count !== 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$7.cartCount, children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { "data-testid": "cart-count", children: count }) })
+    count !== 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$8.cartCount, children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { "data-testid": "cart-count", children: count }) })
   ] });
 };
 const cardContainer$1 = "_cardContainer_1lg09_1";
@@ -7065,7 +7065,7 @@ const cardName = "_cardName_1lg09_109";
 const buttonContainer = "_buttonContainer_1lg09_131";
 const cartAmountContainer$1 = "_cartAmountContainer_1lg09_143";
 const addCartButton = "_addCartButton_1lg09_185";
-const S$6 = {
+const S$7 = {
   cardContainer: cardContainer$1,
   imageContainer,
   overlay: overlay$1,
@@ -7093,13 +7093,13 @@ const ItemCard = ({
     else onRemoveCart();
   };
   const handleAddItem = () => onPatchCart(quantity + 1);
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$6.cardContainer, children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$6.imageContainer, children: [
-      maxQuantity === 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$6.overlay, children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "품절" }) }),
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$7.cardContainer, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$7.imageContainer, children: [
+      maxQuantity === 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$7.overlay, children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "품절" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         "img",
         {
-          className: S$6.cardImg,
+          className: S$7.cardImg,
           src: imageUrl,
           alt: "상품 이미지",
           onError: (e) => {
@@ -7109,20 +7109,20 @@ const ItemCard = ({
         }
       )
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$6.contentContainer, children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$6.itemDescription, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: S$6.cardName, children: name }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$7.contentContainer, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$7.itemDescription, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: S$7.cardName, children: name }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
           price2.toLocaleString(),
           "원"
         ] })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$6.buttonContainer, children: isCart ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$6.cartAmountContainer, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$7.buttonContainer, children: isCart ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$7.cartAmountContainer, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: handleRemoveItem, children: "-" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: quantity }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: handleAddItem, children: "+" })
-      ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: S$6.addCartButton, onClick: onAddCart, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: S$6.cartImg, src: "./images/add-cart.svg", alt: "장바구니 추가" }),
+      ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: S$7.addCartButton, onClick: onAddCart, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: S$7.cartImg, src: "./images/add-cart.svg", alt: "장바구니 추가" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "담기" })
       ] }) })
     ] })
@@ -7134,7 +7134,7 @@ const skeletonLine = "_skeletonLine_1prk4_35";
 const contentContainer$2 = "_contentContainer_1prk4_51";
 const itemDescription = "_itemDescription_1prk4_69";
 const buttonWrap = "_buttonWrap_1prk4_81";
-const S$5 = {
+const S$6 = {
   cardContainer,
   skeletonImg,
   skeletonLine,
@@ -7143,45 +7143,45 @@ const S$5 = {
   buttonWrap
 };
 const SkeletonCard = () => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$5.cardContainer, children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$5.skeletonImg }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$5.contentContainer, children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$5.itemDescription, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$5.skeletonLine }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$5.skeletonLine })
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$6.cardContainer, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$6.skeletonImg }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$6.contentContainer, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$6.itemDescription, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$6.skeletonLine }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$6.skeletonLine })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$5.buttonWrap, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$5.skeletonLine }) })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$6.buttonWrap, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$6.skeletonLine }) })
     ] })
   ] });
 };
 const itemContainer$1 = "_itemContainer_1isgt_1";
-const S$4 = {
+const S$5 = {
   itemContainer: itemContainer$1
 };
 const Skeleton = ({ length }) => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$4.itemContainer, children: Array.from({ length }).map((_, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(SkeletonCard, {}, i)) });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$5.itemContainer, children: Array.from({ length }).map((_, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(SkeletonCard, {}, i)) });
 };
 const title$1 = "_title_xvfs4_1";
 const contentContainer$1 = "_contentContainer_xvfs4_13";
 const contentTop = "_contentTop_xvfs4_23";
 const dropdownContainer = "_dropdownContainer_xvfs4_39";
 const itemContainer = "_itemContainer_xvfs4_65";
-const S$3 = {
+const S$4 = {
   title: title$1,
   contentContainer: contentContainer$1,
   contentTop,
   dropdownContainer,
   itemContainer
 };
-const container$1 = "_container_1kt3g_1";
+const container$2 = "_container_1kt3g_1";
 const cardImg = "_cardImg_1kt3g_15";
 const contentContainer = "_contentContainer_1kt3g_35";
 const infoContainer = "_infoContainer_1kt3g_49";
 const itemRemoveButton = "_itemRemoveButton_1kt3g_61";
 const itemTitle = "_itemTitle_1kt3g_91";
 const cartAmountContainer = "_cartAmountContainer_1kt3g_103";
-const S$2 = {
-  container: container$1,
+const S$3 = {
+  container: container$2,
   cardImg,
   contentContainer,
   infoContainer,
@@ -7202,11 +7202,11 @@ const ItemModalCard = ({
   };
   const handleAddItem = () => onPatchCart(quantity + 1);
   const handleDeleteItem = () => onRemoveCart();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$2.container, children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$3.container, children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       "img",
       {
-        className: S$2.cardImg,
+        className: S$3.cardImg,
         src: imageUrl,
         alt: "상품 이미지",
         onError: (e) => {
@@ -7215,18 +7215,18 @@ const ItemModalCard = ({
         }
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$2.contentContainer, children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$2.infoContainer, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$2.itemInfo, children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: S$2.itemTitle, children: name }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: S$2.itemPrice, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$3.contentContainer, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$3.infoContainer, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$3.itemInfo, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: S$3.itemTitle, children: name }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: S$3.itemPrice, children: [
             price2.toLocaleString(),
             "원"
           ] })
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: S$2.itemRemoveButton, onClick: handleDeleteItem, children: "삭제" })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: S$3.itemRemoveButton, onClick: handleDeleteItem, children: "삭제" })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$2.cartAmountContainer, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$3.cartAmountContainer, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: handleRemoveItem, children: "-" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: quantity }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: handleAddItem, children: "+" })
@@ -7234,7 +7234,7 @@ const ItemModalCard = ({
     ] })
   ] });
 };
-const container = "_container_1qdh6_1";
+const container$1 = "_container_1qdh6_1";
 const overlay = "_overlay_1qdh6_13";
 const title = "_title_1qdh6_31";
 const content = "_content_1qdh6_43";
@@ -7242,8 +7242,8 @@ const cartItemContainer = "_cartItemContainer_1qdh6_65";
 const totalPriceContainer = "_totalPriceContainer_1qdh6_87";
 const price = "_price_1qdh6_107";
 const closeButton = "_closeButton_1qdh6_115";
-const S$1 = {
-  container,
+const S$2 = {
+  container: container$1,
   overlay,
   title,
   content,
@@ -7273,6 +7273,8 @@ const getQueryURL = (baseURL, query) => {
   return baseURL + "?" + params.toString();
 };
 const ERROR_MESSAGE = {
+  NO_PRODUCTS: "불러온 상품 목록이 없습니다.",
+  NO_CART: "장바구니가 비어있습니다.",
   NO_INTERNET: "인터넷 오류입니다. 확인 후 다시 시도해주세요.",
   WRONG_REQUEST: "잘못된 요청입니다. 다시 시도해주세요.",
   OUT_OF_STOCK: "재고 수량을 초과하여 담을 수 없습니다.",
@@ -7338,7 +7340,7 @@ function useFetch() {
   return { fetchData, loading };
 }
 const toastContainer = "_toastContainer_122zs_1";
-const S = {
+const S$1 = {
   toastContainer
 };
 const ErrorToast = ({ message: message2, onClose }) => {
@@ -7348,7 +7350,7 @@ const ErrorToast = ({ message: message2, onClose }) => {
     }, 3500);
     return () => clearTimeout(timer);
   }, [onClose]);
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S.toastContainer, children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: S.toastText, children: message2 }) });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$1.toastContainer, children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: S$1.toastText, children: message2 }) });
 };
 const ErrorContext = reactExports.createContext({
   showError: () => {
@@ -7422,7 +7424,6 @@ const removeCart = async (cartId) => {
       },
       method: "DELETE"
     });
-    console.log(response);
     await handleHttpError(response);
   } catch (error2) {
     if (error2 instanceof Error) throw new Error(error2.message);
@@ -7532,18 +7533,30 @@ const useFetchData = () => {
   if (!context) throw new Error("useFetchData는 DataProvider 내에서 사용되어야 합니다!");
   return context;
 };
-const CartModal = ({ handleClose }) => {
+const container = "_container_iya5p_1";
+const nothingImage = "_nothingImage_iya5p_19";
+const S = {
+  container,
+  nothingImage
+};
+const NothingInfo = ({ description }) => {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S.container, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("img", { className: S.nothingImage, src: "./images/nothing-image.png", alt: "없음 이미지" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: description })
+  ] });
+};
+const CartModal = ({ isOpen, handleClose }) => {
   const { mergedData, handleCartProducts } = useFetchData();
   const cartItemData = mergedData.filter(({ cartInfo }) => cartInfo.id !== -1);
   const totalPrice = cartItemData.reduce(
     (acc, { cartInfo, price: price2 }) => acc + cartInfo.quantity * price2,
     0
   );
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$1.container, children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { "data-testid": "modal-overlay", className: S$1.overlay, onClick: handleClose }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$1.content, children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: S$1.title, children: "장바구니" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$1.cartItemContainer, children: cartItemData == null ? void 0 : cartItemData.map(({ imageUrl, name, price: price2, cartInfo }) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return isOpen && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$2.container, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { "data-testid": "modal-overlay", className: S$2.overlay, onClick: handleClose }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$2.content, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: S$2.title, children: "장바구니" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$2.cartItemContainer, children: cartItemData.length !== 0 ? cartItemData == null ? void 0 : cartItemData.map(({ id: id2, imageUrl, name, price: price2, cartInfo }) => /* @__PURE__ */ jsxRuntimeExports.jsx(
         ItemModalCard,
         {
           imageUrl,
@@ -7552,16 +7565,17 @@ const CartModal = ({ handleClose }) => {
           quantity: cartInfo.quantity,
           onRemoveCart: () => handleCartProducts("remove", { id: cartInfo.id }),
           onPatchCart: (quantity) => handleCartProducts("patch", { id: cartInfo.id, quantity })
-        }
-      )) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$1.totalPriceContainer, children: [
+        },
+        id2
+      )) : /* @__PURE__ */ jsxRuntimeExports.jsx(NothingInfo, { description: ERROR_MESSAGE.NO_CART }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$2.totalPriceContainer, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "총 결제 금액" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: S$1.price, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: S$2.price, children: [
           totalPrice.toLocaleString(),
           "원"
         ] })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: S$1.closeButton, onClick: handleClose, children: "닫기" })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: S$2.closeButton, onClick: handleClose, children: "닫기" })
     ] })
   ] });
 };
@@ -7578,31 +7592,30 @@ const Product = () => {
     handleCartProducts
   } = useFetchData();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    isOpen && /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
       CartModal,
       {
+        isOpen,
         handleClose: () => {
           setIsOpen(false);
         }
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Header, { onClickIcon: () => setIsOpen(true), cartCount: cartLength }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$3.contentContainer, children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$3.contentTop, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: S$3.title, children: "bpple 상품 목록" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$3.dropdownContainer, children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("select", { value: filter, onChange: (e) => setFilter(e.target.value), children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "", children: "전체" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "식료품", children: "식료품" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "패션잡화", children: "패션잡화" })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("select", { value: sort, onChange: (e) => setSort(e.target.value), children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "asc", children: "낮은 가격순" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "desc", children: "높은 가격순" })
-          ] })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$4.contentContainer, children: mergedData.length !== 0 ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$4.contentTop, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: S$4.title, children: "bpple 상품 목록" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$4.dropdownContainer, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("select", { value: filter, onChange: (e) => setFilter(e.target.value), children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "", children: "전체" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "식료품", children: "식료품" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "패션잡화", children: "패션잡화" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("select", { value: sort, onChange: (e) => setSort(e.target.value), children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "asc", children: "낮은 가격순" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "desc", children: "높은 가격순" })
         ] })
       ] }),
-      productsLoading ? /* @__PURE__ */ jsxRuntimeExports.jsx(Skeleton, { length: 10 }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$3.itemContainer, children: mergedData == null ? void 0 : mergedData.map(({ id: id2, imageUrl, name, price: price2, quantity, cartInfo }) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+      productsLoading ? /* @__PURE__ */ jsxRuntimeExports.jsx(Skeleton, { length: 10 }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$4.itemContainer, children: mergedData == null ? void 0 : mergedData.map(({ id: id2, imageUrl, name, price: price2, quantity, cartInfo }) => /* @__PURE__ */ jsxRuntimeExports.jsx(
         ItemCard,
         {
           imageUrl,
@@ -7617,14 +7630,11 @@ const Product = () => {
         },
         id2
       )) })
-    ] })
+    ] }) : /* @__PURE__ */ jsxRuntimeExports.jsx(NothingInfo, { description: ERROR_MESSAGE.NO_PRODUCTS }) })
   ] });
 };
 function App() {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$8.container, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ErrorProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(DataProvider, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Product, {}),
-    ";"
-  ] }) }) });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$9.container, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ErrorProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(DataProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Product, {}) }) }) });
 }
 var POSITIONALS_EXP$1 = /(%?)(%([sdijo]))/g;
 function serializePositional$1(positional, flag) {
@@ -12875,7 +12885,6 @@ const handlers = [
     const cartIndex = cartMockData.content.findIndex((item) => item.id === cartId);
     if (!cartId || quantity < 1 || cartIndex === -1) return HttpResponse.error();
     const cartItem = cartMockData.content[cartIndex];
-    console.log(quantity, cartItem.product.quantity);
     if (quantity > cartItem.product.quantity)
       return HttpResponse.json(
         {

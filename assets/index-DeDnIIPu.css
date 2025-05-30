@@ -38,7 +38,7 @@
   border-radius: 50%;
   font-weight: bold;
 }
-._cardContainer_1lg09_1 {
+._cardContainer_9dzsw_1 {
   width: 182px;
   height: 224px;
   padding-bottom: 8px;
@@ -48,11 +48,11 @@
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
 }
 
-._imageContainer_1lg09_21 {
+._imageContainer_9dzsw_21 {
   position: relative;
 }
 
-._overlay_1lg09_29 {
+._overlay_9dzsw_29 {
   user-select: none;
   position: absolute;
   display: flex;
@@ -68,31 +68,31 @@
   font-weight: bold;
 }
 
-._cardImg_1lg09_61 {
+._cardImg_9dzsw_61 {
   width: 100%;
   height: 112px;
   object-fit: cover;
   background: linear-gradient(110deg, #f0f0f0 40%, #fafafa 50%, #f0f0f0 60%);
   background-size: 300%;
-  animation: _glow_1lg09_1 3s infinite linear;
+  animation: _glow_9dzsw_1 3s infinite linear;
 }
 
-._contentContainer_1lg09_79 {
+._contentContainer_9dzsw_79 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin-top: 12px;
   padding: 0 8px;
-  gap: 27px;
+  gap: 2px;
 }
 
-._itemDescription_1lg09_97 {
+._itemDescription_9dzsw_97 {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-._cardName_1lg09_109 {
+._cardName_9dzsw_109 {
   font-size: 14px;
   font-weight: 700;
   font-family: Inter;
@@ -103,13 +103,13 @@
   word-break: break-all;
 }
 
-._buttonContainer_1lg09_131 {
+._buttonContainer_9dzsw_131 {
   display: flex;
   flex-direction: row-reverse;
   justify-content: end;
 }
 
-._cartAmountContainer_1lg09_143 {
+._cartAmountContainer_9dzsw_143 {
   min-width: 80px;
   display: flex;
   justify-content: space-between;
@@ -117,7 +117,7 @@
   gap: 5px;
 }
 
-._cartAmountContainer_1lg09_143 button {
+._cartAmountContainer_9dzsw_143 button {
   background: none;
   border: 2px solid #eaeaea;
   border-radius: 5px;
@@ -126,11 +126,11 @@
   transition: 0.3s background;
 }
 
-._cartAmountContainer_1lg09_143 button:hover {
+._cartAmountContainer_9dzsw_143 button:hover {
   background: #eaeaea;
 }
 
-._addCartButton_1lg09_185 {
+._addCartButton_9dzsw_185 {
   display: flex;
   align-items: center;
   gap: 4px;
@@ -141,7 +141,7 @@
   padding: 4px 8px;
 }
 
-._removeCartButton_1lg09_207 {
+._removeCartButton_9dzsw_207 {
   display: flex;
   align-items: center;
   gap: 4px;
@@ -152,7 +152,7 @@
   padding: 4px 8px;
 }
 
-@keyframes _glow_1lg09_1 {
+@keyframes _glow_9dzsw_1 {
   0% {
     background-position: 0%;
   }
@@ -481,4 +481,8 @@
 button {
   cursor: pointer;
   user-select: none;
+}
+
+body:has(#modal) {
+  overflow-y: hidden;
 }

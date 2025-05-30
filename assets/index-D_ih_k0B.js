@@ -7055,16 +7055,16 @@ const Cart = ({ count, onClick: handleClickIcon }) => {
     count !== 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$8.cartCount, children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { "data-testid": "cart-count", children: count }) })
   ] });
 };
-const cardContainer$1 = "_cardContainer_1lg09_1";
-const imageContainer = "_imageContainer_1lg09_21";
-const overlay$1 = "_overlay_1lg09_29";
-const cardImg$1 = "_cardImg_1lg09_61";
-const contentContainer$3 = "_contentContainer_1lg09_79";
-const itemDescription$1 = "_itemDescription_1lg09_97";
-const cardName = "_cardName_1lg09_109";
-const buttonContainer = "_buttonContainer_1lg09_131";
-const cartAmountContainer$1 = "_cartAmountContainer_1lg09_143";
-const addCartButton = "_addCartButton_1lg09_185";
+const cardContainer$1 = "_cardContainer_9dzsw_1";
+const imageContainer = "_imageContainer_9dzsw_21";
+const overlay$1 = "_overlay_9dzsw_29";
+const cardImg$1 = "_cardImg_9dzsw_61";
+const contentContainer$3 = "_contentContainer_9dzsw_79";
+const itemDescription$1 = "_itemDescription_9dzsw_97";
+const cardName = "_cardName_9dzsw_109";
+const buttonContainer = "_buttonContainer_9dzsw_131";
+const cartAmountContainer$1 = "_cartAmountContainer_9dzsw_143";
+const addCartButton = "_addCartButton_9dzsw_185";
 const S$7 = {
   cardContainer: cardContainer$1,
   imageContainer,
@@ -7115,6 +7115,10 @@ const ItemCard = ({
         /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
           price2.toLocaleString(),
           "원"
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { style: { fontSize: "12px" }, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("b", { children: maxQuantity }),
+          "개 남음!"
         ] })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: S$7.buttonContainer, children: isCart ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$7.cartAmountContainer, children: [
@@ -7382,7 +7386,10 @@ function useProducts({
   const { fetchData, loading } = useFetch();
   const { requestURL } = useProductQueryURL({ page, size, sortingType, filterType });
   const { showError } = useError();
-  const products = productsInfo.content;
+  const products = [
+    ...productsInfo.content.filter(({ quantity }) => quantity !== 0),
+    ...productsInfo.content.filter(({ quantity }) => quantity === 0)
+  ];
   reactExports.useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -7443,7 +7450,8 @@ const patchCart = async (cartId, quantity) => {
     });
     await handleHttpError(response);
   } catch (error2) {
-    if (error2 instanceof Error) throw new Error(error2.message);
+    console.error("fetch 실패:", error2);
+    throw error2;
   }
 };
 function useCart() {
@@ -7552,7 +7560,7 @@ const CartModal = ({ isOpen, handleClose }) => {
     (acc, { cartInfo, price: price2 }) => acc + cartInfo.quantity * price2,
     0
   );
-  return isOpen && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$2.container, children: [
+  return isOpen && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { id: "modal", className: S$2.container, children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { "data-testid": "modal-overlay", className: S$2.overlay, onClick: handleClose }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: S$2.content, children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: S$2.title, children: "장바구니" }),
